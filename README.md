@@ -2,8 +2,6 @@
 
 ### A semi-realistic, fully functional 1:15 tank model inspired by the T-90M platform. A ground-up remake of the earlier 1:25–1:35 build, with a proper turret ring, a torsion bar suspension, and a wireless multi-controller architecture.
 
-> **Previous version:** [T90M Functional Tank Model (1:25–1:35, variable — retired in favour of this remake). 
-
 ---
 
 # 📌 Overview
@@ -37,7 +35,7 @@ Core behaviours being replicated:
 | Turret drive | N20 geared motor + DRV8833, 10-tooth pinion (8.8:1 on the ring) |
 | Turret angle sensor | AS5600 (absolute, centre-mounted) |
 | Turret lock | 3 quarter-turn lock pins (lock / remove for maintenance) |
-| Cannon elevation | MG90 servo, planned limits about −6° to +14° |
+| Cannon elevation | MG996R servo, planned limits about −6° to +14° |
 | Stabilizer | MPU6500 gyro, magnetometer planned for drift correction |
 | Control | ESP-NOW across three ESP32 units (remote, hull, turret) |
 | Power | Hull and turret each on their own battery and regulators |
@@ -77,7 +75,7 @@ This project follows a function-first engineering mindset:
 - **PETG (3D printed):** turret ring, pinion, lock pins and feet, wheels, tracks, drive wheel
 - **Sintra board (3 mm, double-laminated to 6 mm where needed):** main structural panels
 - **ABS rod (5 mm):** torsion bars
-- **Brass tube:** bushings in the wall holes __(optional) __
+- **Brass tube:** bushings in the wall holes __(optional)__
 - **Steel (rebar tie wire, metal sheet, rods):** reinforcement and anchoring
 - **Chipboard and cardboard:** lightweight structures, mainly for fine details with no required reinforcements
 
