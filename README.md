@@ -217,6 +217,11 @@ This is a personal engineering project, but feedback, suggestions, and improveme
 
 ---
 
-# 📜 License
+# 📜 Licenses
 
-MIT License. See [LICENSE](LICENSE).
+This project is primarily a hardware resource, and the overall repository is licensed under the **CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P-2.0)**. 
+
+To ensure maximum compatibility with software ecosystems:
+* **Hardware & Documentation:** All schematics, PCB layouts, Gerbers, and 3D models are licensed under **CERN-OHL-P-2.0**.
+* **Firmware & Software:** All source code, libraries, and scripts contained in this repository are dual-licensed/available under the **MIT License**.
+
