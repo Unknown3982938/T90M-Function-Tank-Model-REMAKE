@@ -2,13 +2,13 @@
 
 ### A semi-realistic, fully functional 1:15 tank model inspired by the T-90M platform. A ground-up remake of the earlier 1:25–1:35 build, with a proper turret ring, a torsion bar suspension, and a wireless multi-controller architecture.
 
-> **Previous version:** [T90M Functional Tank Model (1:25–1:35, variable scale)](LINK-TO-OLD-REPO) — retired in favour of this remake.
+> **Previous version:** [T90M Functional Tank Model (1:25–1:35, variable — retired in favour of this remake). 
 
 ---
 
 # 📌 Overview
 
-The REMAKE keeps the original idea (a working tank, not a display model) but fixes what the first build could not: a fixed scale, a real turret bearing, an independent suspension, and a turret that can rotate continuously with no wires crossing the ring.
+The REMAKE keeps the original idea (a working tank, not a display model) but fixes what the first build could not: a fixed scale, a real turret bearing, a larger volume, an independent suspension, and a turret that can rotate continuously with no wires crossing the ring.
 
 Core behaviours being replicated:
 
@@ -49,12 +49,12 @@ Core behaviours being replicated:
 - 🔄 **Full mobility:** dual motor tracked drive
 - 🎯 **Continuous turret traverse:** ring gear, ball race, no slip ring needed
 - 🔒 **Removable turret:** quarter-turn lock pins hold the turret down, and unlocking lifts it off for maintenance
-- 🔫 **Cannon actuation:** balanced, lightweight ABS barrel on an MG90 servo
-- ⚖️ **Stabilizer:** turret-local gyro loop, with absolute angle from the AS5600 (experimental)
+- 🔫 **Cannon actuation:** balanced, lightweight ABS barrel on an MG996R servo
+- ⚖️ **Stabilizer:** turret-local gyro loop, with absolute angle from the AS5600 or the original MPU6500 (experimental)
 - 🛞 **Torsion bar suspension:** one bar per wheel station, fixed at its midpoint
 - 📡 **Wireless architecture:** no wires crossing the turret ring
 - 👁️ **IR jammer "eyes"** (visual feature, carried over from v1)
-- 🧱 **Hybrid construction:** Sintra board, ABS, PETG and metal reinforcement
+- 🧱 **Hybrid construction:** Sintra board, ABS, PETG(3D printed parts) and metal reinforcement
 
 ---
 
@@ -74,12 +74,12 @@ This project follows a function-first engineering mindset:
 
 # 🏗️ Materials Used
 
-- **PETG (3D printed):** turret ring, pinion, lock pins and feet, wheels
+- **PETG (3D printed):** turret ring, pinion, lock pins and feet, wheels, tracks, drive wheel
 - **Sintra board (3 mm, double-laminated to 6 mm where needed):** main structural panels
 - **ABS rod (5 mm):** torsion bars
-- **Brass tube:** bushings in the wall holes
+- **Brass tube:** bushings in the wall holes __(optional) __
 - **Steel (rebar tie wire, metal sheet, rods):** reinforcement and anchoring
-- **Chipboard and cardboard:** lightweight structures
+- **Chipboard and cardboard:** lightweight structures, mainly for fine details with no required reinforcements
 
 ---
 
@@ -90,7 +90,7 @@ This project follows a function-first engineering mindset:
 - [x] Blueprint sheet 01 (general specifications)
 - [x] Torsion bar rods fitted in the hull (test layout)
 - [x] Turret ring parts designed (ring, pinion, lock pins)
-- [ ] Final bar elevation and arm angles
+- [x] Final bar elevation and arm angles
 - [ ] Suspension arms and road wheels
 - [ ] Turret ring printed and fit-tested
 - [ ] Electronics integration
