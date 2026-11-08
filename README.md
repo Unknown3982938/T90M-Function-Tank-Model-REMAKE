@@ -48,7 +48,7 @@ Core behaviours being replicated:
 - 🎯 **Continuous turret traverse:** ring gear, ball race, no slip ring needed
 - 🔒 **Removable turret:** quarter-turn lock pins hold the turret down, and unlocking lifts it off for maintenance
 - 🔫 **Cannon actuation:** balanced, lightweight ABS barrel on an MG996R servo
-- ⚖️ **Stabilizer:** turret-local gyro loop, with absolute angle from the AS5600 or the original MPU6500 (experimental)
+- ⚖️ **Stabilizer:** turret-local gyro loop, with absolute angle from the AS5600 and MPU6500 gun angle for depression/elevation (experimental)
 - 🛞 **Torsion bar suspension:** one bar per wheel station, fixed at its midpoint
 - 📡 **Wireless architecture:** no wires crossing the turret ring
 - 👁️ **IR jammer "eyes"** (visual feature, carried over from v1)
