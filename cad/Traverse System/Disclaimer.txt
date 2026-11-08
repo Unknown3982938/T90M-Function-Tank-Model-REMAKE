@@ -1,0 +1,1 @@
+This specific directory focuses on the printable 3D file models for the traverse mechanism. This includes the turret ring(with seperate top part for the turret, and bottom part for the hull) , drive gear, and dedicated ball race meant for ball bearings
