@@ -1,194 +1,213 @@
-# 🛠️ T90M Functional Tank Model
+# 🛠️ T90M Functional Tank Model — REMAKE
 
-### A semi-realistic, fully functional tank model inspired by the T-90M platform. Built using hybrid materials and practical engineering, this project focuses on real mechanical behavior scaled down into a compact, intimidating form.
+### A semi-realistic, fully functional 1:15 tank model inspired by the T-90M platform. A ground-up remake of the earlier 1:25–1:35 build, with a proper turret ring, a torsion bar suspension, and a wireless multi-controller architecture.
+
+> **Previous version:** [T90M Functional Tank Model (1:25–1:35, variable scale)](LINK-TO-OLD-REPO) — retired in favour of this remake.
 
 ---
 
 # 📌 Overview
 
-### The T90M Functional Tank Model is designed to replicate core behaviors of a modern main battle tank while staying within the limits of DIY fabrication and accessible components.
+The REMAKE keeps the original idea (a working tank, not a display model) but fixes what the first build could not: a fixed scale, a real turret bearing, an independent suspension, and a turret that can rotate continuously with no wires crossing the ring.
 
-### This is not just a display model—it is a working system with mobility, turret control, and stabilization features.
+Core behaviours being replicated:
+
+- Tracked differential-steer drive
+- Continuous 360° turret traverse on a ball-race ring gear
+- Gun elevation and depression
+- Gyro-based gun and turret stabilization
+- Independent torsion bar suspension on all six road wheel stations
 
 ---
 
 # ⚙️ Specifications
 
-|Component|Details|
+| Component | Details |
 |---|---|
-|Scale|Variable (~1:15 – 1:30)|
-|Drive Motors|67:1 TT Motors|
-|Turret Traverse|MG996R Servo (360° variable rotation)|
-|Cannon Control|MG90S Servo|
-|Control System|ESP-NOW (wireless communication)|
-|Power (Logic)|5V|
-|Power (Motors)|6V–9V|
-|Drive Type|Dual Track System|
+| Scale | 1:15 (fixed) |
+| Hull (L × W × H) | 52.0 × 22.5 × 6.6 cm |
+| Target mass | 2.5 – 3 kg |
+| Drive motors | TBD (blueprint gear ratio 100:1) |
+| Drive type | Dual track, differential steering |
+| Road wheels | Ø 4.5 cm, 25 mm wide dual wheel, bearing sandwich (625, 5 × 16 × 5 mm) |
+| Drive wheel / Idler | Ø 4.2 cm / Ø 4.0 cm |
+| Suspension | 6 independent torsion bars, 5 mm ABS rod, 3 cm trailing arms |
+| Ride angle | 30° at rest (arms set about 43° with no load, tuned to final mass) |
+| Turret ring | Max Ø 120 mm, 88-tooth internal ring gear (module 1), 40 × 6 mm balls |
+| Turret drive | N20 geared motor + DRV8833, 10-tooth pinion (8.8:1 on the ring) |
+| Turret angle sensor | AS5600 (absolute, centre-mounted) |
+| Turret lock | 3 quarter-turn lock pins (lock / remove for maintenance) |
+| Cannon elevation | MG90 servo, planned limits about −6° to +14° |
+| Stabilizer | MPU6500 gyro, magnetometer planned for drift correction |
+| Control | ESP-NOW across three ESP32 units (remote, hull, turret) |
+| Power | Hull and turret each on their own battery and regulators |
 
 ---
 
 # 🔧 Features
 
-- 🔄 Full Mobility – Dual motor tracked drive system
-- 🎯 Turret Traverse System – Wide-angle/continuous rotation via MG996R
-- 🔫 Cannon Actuation – Elevation control using MG90S
-- ⚖️ Cannon Stabilizer – Maintains orientation during movement (experimental)
-- 👁️ IR Jammer "Eyes" (Visual Feature) – Adds realism and intimidation factor
-- 🧱 Hybrid Construction – Combines multiple materials for strength and flexibility
+- 🔄 **Full mobility:** dual motor tracked drive
+- 🎯 **Continuous turret traverse:** ring gear, ball race, no slip ring needed
+- 🔒 **Removable turret:** quarter-turn lock pins hold the turret down, and unlocking lifts it off for maintenance
+- 🔫 **Cannon actuation:** balanced, lightweight ABS barrel on an MG90 servo
+- ⚖️ **Stabilizer:** turret-local gyro loop, with absolute angle from the AS5600 (experimental)
+- 🛞 **Torsion bar suspension:** one bar per wheel station, fixed at its midpoint
+- 📡 **Wireless architecture:** no wires crossing the turret ring
+- 👁️ **IR jammer "eyes"** (visual feature, carried over from v1)
+- 🧱 **Hybrid construction:** Sintra board, ABS, PETG and metal reinforcement
 
 ---
 
 # 🧠 Design Philosophy
 
-### This project follows a function-first engineering mindset:
+This project follows a function-first engineering mindset:
 
 - Simplicity over unnecessary complexity
 - Structural dependency for reliability
 - Modular parts for easier repair and upgrades
 - Use of salvaged and mixed materials to maximize resource efficiency
 
-#### «If a system only works because of added fixes → unstable design
-#### If a system fails when a critical part is removed → intentional design»
+> «If a system only works because of added fixes → unstable design
+> If a system fails when a critical part is removed → intentional design»
 
 ---
 
 # 🏗️ Materials Used
 
-- 3D Printed Components (Drive Wheels)
-- Sintra Board (Main structural panels)
-- Chipboard & Cardboard (Lightweight structures)
-- Metal Sheet (Reinforcement)
-- Metal Tubes & Rods (Mechanical support and alignment)
+- **PETG (3D printed):** turret ring, pinion, lock pins and feet, wheels
+- **Sintra board (3 mm, double-laminated to 6 mm where needed):** main structural panels
+- **ABS rod (5 mm):** torsion bars
+- **Brass tube:** bushings in the wall holes
+- **Steel (rebar tie wire, metal sheet, rods):** reinforcement and anchoring
+- **Chipboard and cardboard:** lightweight structures
 
 ---
 
 # 🚧 Project Status
 
-This project is currently in the foundation phase.
+**Phase: foundation (chassis and suspension).**
 
-- Mechanical base and chassis are still being developed
-- Electronics integration is planned for later stages
-- System architecture is not finalized yet
+- [x] Blueprint sheet 01 (general specifications)
+- [x] Torsion bar rods fitted in the hull (test layout)
+- [x] Turret ring parts designed (ring, pinion, lock pins)
+- [ ] Final bar elevation and arm angles
+- [ ] Suspension arms and road wheels
+- [ ] Turret ring printed and fit-tested
+- [ ] Electronics integration
+- [ ] Stabilizer tuning
 
 ---
 
 # 🏗️ Build Process
 
-1. Chassis Construction
+### 1. Chassis
+- Layered Sintra board hull with reinforced panels
+- Torsion bar holes lined with brass tube bushings
 
-- Hybrid layered structure using sintra board and reinforced panels
-- Designed to support motor torque and uneven load distribution
+### 2. Suspension
+- 5 mm ABS rod per station, midpoint fixed to the hull floor by a block on a base plate
+- 3 cm trailing arms with a cross pin, plus bump and rebound stops
+- Arms set about 43° with no load so the hull settles at the 30° ride angle
 
-2. Drive System
+### 3. Road wheels
+- Two 3 mm discs sandwiching a 625 bearing, built as dual wheels with a 7 mm guide gap
+- One M5 bolt axle per station, with collars so only the bearing inner rings are clamped
 
-- Dual 67:1 TT motors installed for tracked propulsion
-- Gear ratio chosen for higher torque and controlled movement
+### 4. Turret system
+- Internal ring gear fixed to the hull, N20 pinion drive on the turret
+- 6 mm ball race, with the turret held down by the lock pins
 
-3. Turret System
+### 5. Cannon and stabilizer
+- Balanced ABS barrel on an MG90 servo
+- MPU6500 on the turret ESP32, with its own control loop
 
-- MG996R servo used for wide/continuous rotation
-- Mounted with reinforced base to handle load and vibration
-
-4. Cannon Mechanism
-
-- MG90S servo controls elevation
-- Linked using metal rods for precise movement
-
-5. Electronics & Control
-
-- ESP-based system using ESP-NOW protocol
-- Separate power lines for logic (5V) and motors (6–9V)
-- Designed to minimize interference and voltage drops
+### 6. Electronics and control
+- Three ESP32 units over ESP-NOW (remote, hull, turret), each with its own battery and regulators
+- Turret traverse failsafe if packets stop for about 300 – 500 ms
 
 ---
 
 # 🔌 System Architecture
 
-- Wireless control via ESP-NOW
-- Dual power distribution:
-  - Stable 5V rail for microcontroller and sensors
-  - Higher voltage rail for motors and servos
+```
+[Remote ESP32] ──ESP-NOW──► [Hull ESP32]   → drive motors
+       └─────ESP-NOW──────► [Turret ESP32] → N20 traverse, cannon servo,
+                                             MPU6500, AS5600
+```
 
-(Adding wiring diagram here in future updates)
+- All three units share the same Wi-Fi channel
+- The stabilizer loop runs locally on the turret, never over the radio
+- Motor and servo supplies are kept separate from the logic supply
+
+(Wiring diagram to be added.)
 
 ---
 
 # 🧪 Testing & Performance
 
-|Aspect|Status|
+| Aspect | Status |
 |---|---|
-|Mobility|Stable, torque-focused movement|
-|Turning|Differential track steering|
-|Stability|Cannon stabilizer (in testing)|
-|Durability|Reinforced hybrid structure|
+| Suspension (ride angle, travel) | Not yet tested |
+| Turret traverse | Not yet tested |
+| Turret lock and removal | Not yet tested |
+| Stabilizer | Not yet tested |
+| Mobility | Not yet tested |
 
 ---
 
 # 🚧 Current Limitations
 
-- No fixed scale standard (affects part compatibility)
-- Speed limited due to high gear ratio (torque-focused setup)
-- Stabilization system still experimental
+- ABS torsion bars can creep slowly under constant load
+- Turret yaw lock drifts without the magnetometer
+- Drive speed depends on the final motor and gear choice
 - Track efficiency depends on alignment and tension
 
 ---
 
 # 🔮 Future Improvements
 
-- Add suspension system for terrain handling
-- Optimize track design and material durability
-- Improve stabilization accuracy (possibly sensor-based)
-- Integrate camera or FPV system
-- Enhance turret realism (recoil system, smoother rotation)
+- Magnetometer for yaw drift correction
+- Closed-loop gun angle sensing (AS5600 on the trunnion)
+- Damped bushings for the suspension
+- Camera or FPV system
+- Recoil system and smoother turret detail
+
+---
+
+# 📚 Documentation
+
+| Item | Location |
+|---|---|
+| Drawing sheets (01 / 10 so far) | `docs/` |
+| STL files | `cad/` |
+| Firmware | `firmware/` |
+| Wiring and electronics | `electronics/` |
 
 ---
 
 # 📷 Media
 
-
-## [Overall build overview] 
-<img width="8160" height="6144" alt="IMG_20260422_111727" src="https://github.com/user-attachments/assets/bdbd137e-c046-45f7-ac1a-fa5eb056c96e" />
-<img width="8160" height="6144" alt="IMG_20260407_192258" src="https://github.com/user-attachments/assets/94b43e0b-1333-4fe8-b3cd-817e1838cb0a" />
-<img width="8160" height="6144" alt="IMG_20260519_111400" src="https://github.com/user-attachments/assets/e2b7d85b-2051-4d40-96fb-00a36214450e" />
-<img width="8160" height="6144" alt="IMG_20260519_111414" src="https://github.com/user-attachments/assets/3ba950ee-0098-4ed1-a79e-f19bd527aaf7" />
-
-
-
-
-## [Internals]
-<img width="8160" height="6144" alt="IMG_20260422_112050" src="https://github.com/user-attachments/assets/7fd5b89c-ed1e-4f48-97a3-c3daab9c1f9f" />
-<img width="8160" height="6144" alt="IMG_20260411_101005" src="https://github.com/user-attachments/assets/1623133b-38bc-426a-8b23-39f61a925581" />
-
-
-
-## [Front Turret, IR enabled]
-<img width="8160" height="6144" alt="IMG_20260410_213306" src="https://github.com/user-attachments/assets/9ce6f189-6a97-4e57-881c-24307d581838" />
-
+*(Photos and renders to be added.)*
 
 ---
 
 # 📊 Version Log
 
-## v1.0
-
-- Base chassis completed
-- Functional drive system
-- Basic turret and cannon control
-
-## v1.x (In Progress)
-
-- Stabilizer refinement
-- Structural reinforcement
-- Visual detailing
+## v1.01.001 — Rev 02 (Zero Draft Unit, September 2026)
+- Remake started at fixed 1:15 scale
+- General specifications sheet drawn
+- Torsion bar suspension designed and test-fitted
+- Turret ring, pinion and lock pins designed
 
 ---
 
 # 👤 Social Account links
-## (For more broader coverage for the updates regarding the model and future projects) 
 
-FB: "https://www.facebook.com/lawrence.tulali"
+(For broader coverage of updates on the model and future projects)
 
-TikTok: "https://www.tiktok.com/@philie_imation_001?_r=1&_t=ZS-960qj1Infa1"
+FB: [https://www.facebook.com/lawrence.tulali](https://www.facebook.com/lawrence.tulali)
+
+TikTok: [https://www.tiktok.com/@philie_imation_001](https://www.tiktok.com/@philie_imation_001)
 
 ---
 
@@ -200,4 +219,4 @@ This is a personal engineering project, but feedback, suggestions, and improveme
 
 # 📜 License
 
-MIT License
+MIT License. See [LICENSE](LICENSE).
