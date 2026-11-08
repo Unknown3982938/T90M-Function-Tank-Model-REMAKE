@@ -1,0 +1,1 @@
+This folder contains all made blueprints, used as a reference sheet if you ever decided to make your own model. Be advised that this does not apply to all application, it still differs on the availability of your materials that it is your own to decide your own workaround for the same function
